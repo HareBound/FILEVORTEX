@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Site</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      width: 320px; /* Largura desejada */
+      height: 108px; /* Altura desejada */
+      background-color: black;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .hamburger-menu {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #fff;
+      cursor: pointer;
+      z-index: 1;
+    }
+    
+    .options-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+      transition: width 0.3s ease;
+    }
+    
+    .options-container.open {
+      width: 250px;
+    }
+    
+    .options {
+      width: 100%;
+      padding: 20px;
+      color: #fff;
+      text-align: left;
+    }
+    
+    .options a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    
+    main {
+      padding: 20px;
+    }
+    
+    h1 {
+      color: #333;
+    }
+    
+    .file-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .file-list li {
+      margin-bottom: 10px;
+    }
+    
+    .file-link {
+      color: #337ab7;
+      text-decoration: none;
+    }
+    
+    footer {
+      background-color: white;
+      color: black;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+    
+    /* Estilos para as imagens de exemplo */
+    .leap {
+      height: 100px;
+      width: 100px;
+      margin: 0 auto;
+      display: block;
+    }
+    
+    .download-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #337ab7;
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .download-button:hover {
+      background-color: #23527c;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="banner.png" style="position: center;">
+    <div class="hamburger-menu" onclick="toggleOptions()">&#9776;</div>
+  </header>
+
+  <div class="options-container" id="options-container">
+    <div class="options">
+      <br>
+      <br>
+      <a href="index.php">Início</a>
+      <a href="#">Opção 2</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeaGjbY_W1NcR-uBQYff92BPOf4OF4PuhCkyT4PT3_qsxP4qQ/viewform?usp=sf_link">Enviar APP</a>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div style="text-align: center;">
+    <img src="dino.png" class="leap" id="leap">
+    <br>
+    <br>
+    <h2>Dino Dash</h2>
+    <p>Versão: 1.0.0</p>
+    <p>Desenvolvedor: K00LD</p>
+    <p>Tamanho do APK: 3.00MB</p>
+    <p>Requisitos do sistema operacional: Android 5</p>
+    <p>Classificação etária: Livre</p>
+    <p>Idiomas suportados: Todos</p>
+    <p>Data de lançamento: (05/06/2023)</p>
+    <p>Descrição do aplicativo: Um jogo desenvolvido e verificado para todos se divertirem.</p>
+    <p>Modo offline: Sim</p>
+    <a href="https://download1508.mediafire.com/kqipfhimktggxKw2CdMksy7nI4loip_-7ef6woktXXrP-GD9usHuVrbwUYikO4fevE6m-vO0siY72-696wCGzoWM_65twMFT64HMg0j0dcPtwXHffq1x7A61hsv1FcWaLGMtG6ZxFSL7RejvpymNbjWkZhfyFKg0eycQRBPi7ozmjg_m/06xv7rcwukopq8i/Dino+Dash.apk" class="download-button">BAIXAR</a>
+ <br>
+    <br>
+        <p>Contato: <a href="mailto:hareboundstudios@gmail.com">hareboundstudios@gmail.com</a></p>
+  </div>
+  <footer>
+    &copy; 2023 Download Site. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function toggleOptions() {
+      var optionsContainer = document.getElementById("options-container");
+      optionsContainer.classList.toggle("open");
+    }
+  </script>
+</body>
+</html>
