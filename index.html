@@ -145,27 +145,28 @@ h4{color: white;}
     <input type="text" id="search-input" placeholder="🔎Pesquisar jogo...🔍" style="padding: 10px 20px; font-size: 20px;">
     <h2>Jogos disponíveis</h2>
     <ul class="image-list">
-  <li class="game-item">
-    <a href="https://harebound.github.io/FILEVORTEX/leap.html"><img src="app1.png" alt="Image 1" class="image"></a>
-    <div class="image-name">LEAP OVER</div>
-  </li>
-  <li class="game-item">
-    <a href="https://harebound.github.io/FILEVORTEX/mina.html"><img src="app2.png" alt="Image 2" class="image"></a>
-    <div class="image-name">Campo minado</div>
-  </li>
-  <li class="game-item">
-    <a href="https://harebound.github.io/FILEVORTEX/vez.html"><img src="app3.png" alt="Image 3" class="image"></a>
-    <div class="image-name">Jogo da #</div>
-  </li>
-  <li class="game-item">
-    <a href="https://harebound.github.io/FILEVORTEX/dino.html"><img src="dino.png" alt="Image 3" class="image"></a>
-    <div class="image-name">Dino Dash</div>
-  </li>
       <li class="game-item">
-    <a href="https://harebound.github.io/FILEVORTEX/minecraft.html"><img src="minecraft.png" alt="Image 3" class="image"></a>
-    <div class="image-name">Minecraft</div>
-  </li>
-</ul>
+        <a href="https://harebound.github.io/FILEVORTEX/leap.html"><img src="app1.png" alt="Image 1" class="image"></a>
+        <div class="image-name">LEAP OVER</div>
+      </li>
+      <li class="game-item">
+        <a href="https://harebound.github.io/FILEVORTEX/mina.html"><img src="app2.png" alt="Image 2" class="image"></a>
+        <div class="image-name">Campo minado</div>
+      </li>
+      <li class="game-item">
+        <a href="https://harebound.github.io/FILEVORTEX/vez.html"><img src="app3.png" alt="Image 3" class="image"></a>
+        <div class="image-name">Jogo da #</div>
+      </li>
+      <li class="game-item">
+        <a href="https://harebound.github.io/FILEVORTEX/dino.html"><img src="dino.png" alt="Image 3" class="image"></a>
+        <div class="image-name">Dino Dash</div>
+      </li>
+      <li class="game-item">
+        <a href="https://harebound.github.io/FILEVORTEX/minecraft.html"><img src="minecraft.png" alt="Image 3" class="image"></a>
+        <div class="image-name">Minecraft</div>
+      </li>
+    </ul>
+    <p id="no-results-msg" style="display: none; text-align: center;">Nenhum app ou jogo encontrado com esse nome.</p>
   </main>
 
   <footer>
@@ -175,6 +176,9 @@ h4{color: white;}
   function searchGames() {
     var searchTerm = document.getElementById("search-input").value.toLowerCase();
     var gameItems = document.getElementsByClassName("game-item");
+    var noResultsMsg = document.getElementById("no-results-msg");
+
+    var foundResults = false;
 
     for (var i = 0; i < gameItems.length; i++) {
       var gameName = gameItems[i].querySelector(".image-name").innerText.toLowerCase();
@@ -183,10 +187,17 @@ h4{color: white;}
       if (gameName.includes(searchTerm)) {
         gameItems[i].style.display = "block";
         gameImage.style.opacity = "1";
+        foundResults = true;
       } else {
         gameItems[i].style.display = "none";
         gameImage.style.opacity = "0.5";
       }
+    }
+
+    if (foundResults) {
+      noResultsMsg.style.display = "none";
+    } else {
+      noResultsMsg.style.display = "block";
     }
   }
 
