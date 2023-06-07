@@ -93,11 +93,10 @@
     .image-list {
       list-style-type: none;
       padding: 0;
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
       gap: 20px;
+      justify-items: center;
     }
     
     .image-list li {
@@ -105,24 +104,25 @@
     }
     
     .image {
-      width: 75px;
-      height: 75px;
+      width: 60px;
+      height: 60px;
       object-fit: cover;
     }
     
     .image-name {
       margin-top: 10px;
     }
+    h2{
+     position: center;
+    }
     
     #search-input::placeholder {
-      text-align: center;
-      vertical-align: middle;
-      line-height: normal;
-    }
+  text-align: center;
+  vertical-align: middle;
+  line-height: normal;
+}
     
-    h4 {
-      color: white;
-    }
+h4{color: white;}
 
   </style>
 </head>
@@ -145,27 +145,27 @@
     <input type="text" id="search-input" placeholder="🔎Pesquisar jogo...🔍" style="padding: 10px 20px; font-size: 20px;">
     <h2>Jogos disponíveis</h2>
     <ul class="image-list">
+  <li class="game-item">
+    <a href="https://harebound.github.io/FILEVORTEX/leap.html"><img src="app1.png" alt="Image 1" class="image"></a>
+    <div class="image-name">LEAP OVER</div>
+  </li>
+  <li class="game-item">
+    <a href="https://harebound.github.io/FILEVORTEX/mina.html"><img src="app2.png" alt="Image 2" class="image"></a>
+    <div class="image-name">Campo minado</div>
+  </li>
+  <li class="game-item">
+    <a href="https://harebound.github.io/FILEVORTEX/vez.html"><img src="app3.png" alt="Image 3" class="image"></a>
+    <div class="image-name">Jogo da #</div>
+  </li>
+  <li class="game-item">
+    <a href="https://harebound.github.io/FILEVORTEX/dino.html"><img src="dino.png" alt="Image 3" class="image"></a>
+    <div class="image-name">Dino Dash</div>
+  </li>
       <li class="game-item">
-        <a href="https://harebound.github.io/FILEVORTEX/leap.html"><img src="app1.png" alt="Image 1" class="image"></a>
-        <div class="image-name">LEAP OVER</div>
-      </li>
-      <li class="game-item">
-        <a href="https://harebound.github.io/FILEVORTEX/mina.html"><img src="app2.png" alt="Image 2" class="image"></a>
-        <div class="image-name">Campo minado</div>
-      </li>
-      <li class="game-item">
-        <a href="https://harebound.github.io/FILEVORTEX/vez.html"><img src="app3.png" alt="Image 3" class="image"></a>
-        <div class="image-name">Jogo da #</div>
-      </li>
-      <li class="game-item">
-        <a href="https://harebound.github.io/FILEVORTEX/dino.html"><img src="dino.png" alt="Image 3" class="image"></a>
-        <div class="image-name">Dino Dash</div>
-      </li>
-      <li class="game-item">
-        <a href="https://harebound.github.io/FILEVORTEX/minecraft.html"><img src="minecraft.png" alt="Image 3" class="image"></a>
-        <div class="image-name">Minecraft</div>
-      </li>
-    </ul>
+    <a href="https://harebound.github.io/FILEVORTEX/minecraft.html"><img src="minecraft.png" alt="Image 3" class="image"></a>
+    <div class="image-name">Minecraft</div>
+  </li>
+</ul>
   </main>
 
   <footer>
