@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
@@ -11,8 +12,6 @@
     }
     
     header {
-      width: 320px; /* Largura desejada */
-      height: 108px; /* Altura desejada */
       background-color: black;
       color: #fff;
       padding: 20px;
@@ -62,72 +61,70 @@
       padding: 20px;
     }
     
-    h1 {
+    h1, h2 {
       color: #333;
-    }
-    
-    .file-list {
-      list-style-type: none;
-      padding: 0;
-    }
-    
-    .file-list li {
-      margin-bottom: 10px;
-    }
-    
-    .file-link {
-      color: #337ab7;
-      text-decoration: none;
-    }
-    
-    footer {
-      background-color: white;
-      color: black;
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
     }
     
-    /* Estilos para as imagens de exemplo */
     .image-list {
       list-style-type: none;
       padding: 0;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       justify-items: center;
     }
     
-    .image-list li {
+    .game-item {
       text-align: center;
     }
     
     .image {
-      width: 65px;
-      height: 65px;
+      width: 150px;
+      height: 150px;
       object-fit: cover;
     }
     
     .image-name {
       margin-top: 10px;
     }
-    h2{
-     position: center;
-    }
     
     #search-input::placeholder {
-  text-align: center;
-  vertical-align: middle;
-  line-height: normal;
-}
+      text-align: center;
+      vertical-align: middle;
+      line-height: normal;
+    }
     
-h4{color: white;}
-
+    h4 {
+      color: white;
+      text-align: center;
+    }
+    
+    @media (min-width: 768px) {
+      header {
+        width: 100%;
+        height: 200px;
+      }
+      
+      .hamburger-menu {
+        top: 40px;
+        left: 40px;
+      }
+      
+      .image-list {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      
+      .image {
+        width: 100px;
+        height: 100px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="banner.png" style="position: center;">
+    <img src="banner.png" alt="Banner" style="max-width: 100%;">
     <div class="hamburger-menu" onclick="toggleOptions()">&#9776;</div>
   </header>
 
@@ -142,7 +139,7 @@ h4{color: white;}
     </div>
   </div>
   <main>
-    <input type="text" id="search-input" placeholder="🔎Pesquisar jogo...🔍" style="padding: 10px 20px; font-size: 20px;">
+    <input type="text" id="search-input" placeholder="🔎 Pesquisar jogo... 🔍" style="padding: 10px 20px; font-size: 20px;">
     <h2>Jogos disponíveis</h2>
     <ul class="image-list">
       <li class="game-item">
@@ -180,39 +177,37 @@ h4{color: white;}
   <footer>
     &copy; 2023 Download Site. Todos os direitos reservados.
   </footer>
-<script>
-  function searchGames() {
-    var searchTerm = document.getElementById("search-input").value.toLowerCase();
-    var gameItems = document.getElementsByClassName("game-item");
-    var noResultsMsg = document.getElementById("no-results-msg");
+  <script>
+    function searchGames() {
+      var searchTerm = document.getElementById("search-input").value.toLowerCase();
+      var gameItems = document.getElementsByClassName("game-item");
+      var noResultsMsg = document.getElementById("no-results-msg");
 
-    var foundResults = false;
+      var foundResults = false;
 
-    for (var i = 0; i < gameItems.length; i++) {
-      var gameName = gameItems[i].querySelector(".image-name").innerText.toLowerCase();
-      var gameImage = gameItems[i].querySelector(".image");
+      for (var i = 0; i < gameItems.length; i++) {
+        var gameName = gameItems[i].querySelector(".image-name").innerText.toLowerCase();
+        var gameImage = gameItems[i].querySelector(".image");
 
-      if (gameName.includes(searchTerm)) {
-        gameItems[i].style.display = "block";
-        gameImage.style.opacity = "1";
-        foundResults = true;
+        if (gameName.includes(searchTerm)) {
+          gameItems[i].style.display = "block";
+          gameImage.style.opacity = "1";
+          foundResults = true;
+        } else {
+          gameItems[i].style.display = "none";
+          gameImage.style.opacity = "0.5";
+        }
+      }
+
+      if (foundResults) {
+        noResultsMsg.style.display = "none";
       } else {
-        gameItems[i].style.display = "none";
-        gameImage.style.opacity = "0.5";
+        noResultsMsg.style.display = "block";
       }
     }
 
-    if (foundResults) {
-      noResultsMsg.style.display = "none";
-    } else {
-      noResultsMsg.style.display = "block";
-    }
-  }
+    document.getElementById("search-input").addEventListener("input", searchGames);
 
-  document.getElementById("search-input").addEventListener("input", searchGames);
-</script>
-
-  <script>
     function toggleOptions() {
       var optionsContainer = document.getElementById("options-container");
       optionsContainer.classList.toggle("open");
