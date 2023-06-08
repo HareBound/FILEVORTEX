@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Login</h1>
+    <div class="social-media">
+      <a href="#" class="google-login">
+        <img src="google.png" alt="Google">
+      </a>
+      <a href="#" class="email-login">
+        <img src="email.png" alt="Email">
+      </a>
+      <a href="#" class="facebook-login">
+        <img src="facebook.png" alt="Facebook">
+      </a>
+    </div>
+
+    <div class="alternative">
+      <span>OR</span>
+    </div>
+
+    <form id="form">
+      <label for="username">
+        <span>Username</span>
+        <input type="text" id="username" name="username">
+      </label>
+
+      <label for="password">
+        <span>Password</span>
+        <input type="password" id="password" name="password">
+      </label>
+
+      <input type="submit" value="Login" id="button">
+    </form>
+  </main>
+  <script>
+    // Adicione o código de autenticação específico de cada plataforma aqui
+    // Por exemplo, para o login do Google, utilize a API do Google Sign-In
+    // Para o login do Facebook, utilize a API do Facebook Login
+    // Para o login por email, implemente a lógica de autenticação personalizada
+  </script>
+</body>
+</html>
